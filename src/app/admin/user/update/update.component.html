@@ -1,0 +1,70 @@
+<div class="container">
+    <div class="row d-flex justify-content-center">
+        <div id="col" class="col-12 col-md-8">
+            <div class="card border-light shadow">
+                <div class="card-header">Actualizar Usuario</div>
+                <div class="card-body">
+                    <form (ngSubmit)="updateConfirm()" [formGroup]="formUpdate">
+                        <div class="form-group">
+                            <label for="inputName" class="form-label mt-4">Nombre</label>
+                            <input formControlName="name" type="text" class="form-control" id="inputName"
+                                aria-describedby="naimeHelp" placeholder="Enter name">
+                            <small id="nameHelp" class="form-text text-muted">Ingresa tu nombre completo.</small>
+                        </div>
+                        <div class="form-group">
+                            <label for="inputEmail" class="form-label mt-4">Email</label>
+                            <input formControlName="email" type="email" class="form-control" id="inputEmail"
+                                aria-describedby="emailHelp" placeholder="Enter email">
+                            <small id="emailHelp" class="form-text text-muted">Ingresa se email.</small>
+                        </div>
+                        <div class="form-group">
+                            <fieldset class="form-group">
+                                <label for="inputState" class="form-label mt-4">State</label>
+                                <div class="form-check form-switch">
+                                    <input formControlName="state" class="form-check-input" type="checkbox"
+                                        id="flexSwitchCheckAvailable">
+                                    <small id="switchAvailable" class="form-text text-muted">Active</small>
+                                </div>
+                            </fieldset>
+                        </div>
+                        <div class="form-group">
+                            <fieldset class="form-group">
+                                <label for="inputRole" class="form-label mt-4">Role</label>
+                                <div class="form-group">
+                                    <label for="exampleSelect1" class="form-label mt-4">Role de Usuario</label>
+                                    <select class="form-select" id="exampleSelect1" formControlName="role">
+                                        <option>Admin</option>
+                                        <option>Cliente</option>
+                                        <option>Ventas</option>
+                                    </select>
+                                    <small id="emailHelp" class="form-text text-muted">Actualmente es un: {{roleUser}}.</small>
+                                </div>
+                            </fieldset>
+                        </div>
+                        <div class="form-group">
+                            <fieldset class="form-group">
+                                <label for="inputGoogle" class="form-label mt-4">Google</label>
+                                <div class="form-check form-switch">
+                                    <input formControlName="google" class="form-check-input" type="checkbox"
+                                        id="flexSwitchCheckAvailable">
+                                    <small id="switchAvailable" class="form-text text-muted">Is Google</small>
+                                </div>
+                            </fieldset>
+                        </div>
+                        <div class="form-group ">
+                            <div class="row justify-content-evenly mt-5">
+                                <div class="col-4">
+                                    <button type="submit" class="btn btn-primary">Actualizar</button>
+                                </div>
+                                <div class="col-4">
+                                    <button type="button" class="btn btn-danger"
+                                        (click)="redirectUserList()">Cancelar</button>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

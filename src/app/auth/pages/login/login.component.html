@@ -1,0 +1,50 @@
+<div class="container-fluid">
+    <div class="row">
+        <div id="col" class="col-12 col-md-8 ">
+            <div class="card shadow-lg">
+                <form action="" (ngSubmit)="login()" [formGroup]="miFormulario">
+                    <div class="form-group">
+                        <label class="form-label mt-4">Iniciar Sesión</label>
+                        <div class="form-floating mb-3">
+                          <input formControlName="email" id="email" type="email" class="form-control" placeholder="name@example.com">
+                          <label for="floatingInput">Email address</label>
+                        </div>
+                        <div class="form-floating">
+                          <input formControlName="password" id="password" type="password" class="form-control" placeholder="Password">
+                          <label for="floatingPassword">Password</label>
+                        </div>
+                    </div>
+                    <div class="input-field col s12 p-5">
+                        <button type="submit" class="btn btn-outline-success">Inciar Sesión</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- <div class="container">
+    <div class="card mb-3">
+        <div class="card-header"><h1 class="card-title">Iniciar Sesión</h1></div>
+        <div class="card-body">
+            <div class="row">
+                <form (ngSubmit)="login()" [formGroup]="miFormulario" class="col s12">
+                    <div class="input-field col s12">
+                        <input formControlName="email" id="email" type="email" class="validate">
+                        <label for="email">Email</label>
+                        <span class="helper-text" data-error="wrong" data-success="right">example@email.com</span>
+                    </div>
+                    <div class="input-field col s12">
+                        <input formControlName="password" id="password" type="password" class="validate">
+                        <label for="password">Password</label>
+                    </div>
+                    <div class="input-field col s12">
+                        <a style="color:black" routerLink="/auth/register">Or create User</a>
+                    </div>
+                    <div class="input-field col s12">
+                        <button class="waves-effect btn-secondary btn">button</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div> -->

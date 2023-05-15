@@ -1,0 +1,121 @@
+<div class="container">
+    <div class="row d-flex justify-content-center">
+        <div id="col" class="col-12 col-md-8">
+            <div class="card border-light shadow">
+                <div class="card-header">Create User</div>
+                <div class="card-body">
+                    <form (ngSubmit)="create()" [formGroup]="formCreate">
+                        <div class="form-group">
+                            <label for="inputName" class="form-label mt-4">Nombre</label>
+                            <input formControlName="name" type="text" class="form-control" id="inputName"
+                                aria-describedby="naimeHelp" placeholder="Enter name">
+                            <small id="nameHelp" class="form-text text-muted">Ingresa tu nombre completo.</small>
+                        </div>
+                        <div class="form-group">
+                            <label for="inputEmail" class="form-label mt-4">Email</label>
+                            <input formControlName="email" type="email" class="form-control" id="inputEmail"
+                                aria-describedby="emailHelp" placeholder="Enter email">
+                            <small id="emailHelp" class="form-text text-muted">Ingresa se email.</small>
+                        </div>
+                        <div class="form-group">
+                            <label for="inputPassword" class="form-label mt-4">Contraseña</label>
+                            <input formControlName="password" type="password" class="form-control" id="inputPassword"
+                                placeholder="password" placeholder="Enter password">
+                            <small id="passwordHelp" class="form-text text-muted">Ingresa tu contraseña.</small>
+                        </div>
+                        <div class="form-group">
+                            <label for="inputPasswordConfirm" class="form-label mt-4">Confirmar contraseña</label>
+                            <input formControlName="passwordConfirm" type="password" class="form-control"
+                                id="inputPasswordConfirm" placeholder="passwordConfirm" placeholder="Confirm password">
+                            <small id="passwordHelp" class="form-text text-muted">Confirmar tu contraseña.</small>
+                            <p *ngIf="validPassword()" style="color: red">Las contraseñas no son iguales</p>
+                        </div>
+                        <div class="form-group">
+                            <fieldset class="form-group">
+                                <label for="inputState" class="form-label mt-4">Role</label>
+                                <select class="form-select" id="exampleSelect1" formControlName="role">
+                                    <option value="1">Admin</option>
+                                    <option value="2">Cliente</option>
+                                    <option value="3">Ventas</option>
+                                </select>
+                            </fieldset>
+                        </div>
+                        <div class="form-group ">
+                            <div class="row justify-content-evenly mt-5">
+                                <div class="col-4">
+                                    <button type="submit" class="btn btn-primary">Enviar</button>
+                                </div>
+                                <div class="col-4">
+                                    <button type="button" class="btn btn-danger">Cancelar</button>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- <div class="container">
+   <div class="row">
+     <div class="col-12">
+        <div class="card border-light shadow">
+            <div class="card-header">Create Product</div>
+            <div class="card-body">
+                <form>
+                    <div class="form-group">
+                        <label for="inputName" class="form-label mt-4">Nombre</label>
+                        <input type="text" class="form-control" id="inputName" aria-describedby="naimeHelp"
+                            placeholder="Enter name">
+                        <small id="nameHelp" class="form-text text-muted">Ingresa tu nombre completo.</small>
+                    </div>
+                    <div class="form-group">
+                        <label for="inputEmail" class="form-label mt-4">Email</label>
+                        <input type="email" class="form-control" id="inputEmail" aria-describedby="emailHelp"
+                            placeholder="Enter email">
+                        <small id="emailHelp" class="form-text text-muted">Ingresa se email.</small>
+                    </div>
+                    <div class="form-group">
+                        <label for="inputPassword" class="form-label mt-4">Contraseña</label>
+                        <input type="password" class="form-control" id="inputPassword" placeholder="password"
+                            placeholder="Enter password">
+                        <small id="passwordHelp" class="form-text text-muted">Ingresa tu contraseña.</small>
+                    </div>
+                    <div class="form-group">
+                        <label for="inputPasswordConfirm" class="form-label mt-4">Confirmar contraseña</label>
+                        <input type="password" class="form-control" id="inputPasswordConfirm" placeholder="passwordConfirm"
+                            placeholder="Confirm password">
+                        <small id="passwordHelp" class="form-text text-muted">Confirmar tu contraseña.</small>
+                    </div>
+                    <div class="form-group">
+                        <fieldset class="form-group">
+                            <label for="inputState" class="form-label mt-4">Disponible</label>
+                            <div class="form-check form-switch">
+                                <input class="form-check-input" type="checkbox" id="flexSwitchCheckAvailable">
+                                <small id="switchAvailable" class="form-text text-muted">Activar/Desactivar</small>
+                            </div>
+                        </fieldset>
+                    </div>
+                    <div class="form-group">
+                        <label for="inputCategory" class="form-label mt-4">Categoría</label>
+                        <input type="text" class="form-control" id="inputCategory" aria-describedby="categoryHelp"
+                            placeholder="Enter category">
+                        <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone
+                            else.</small>
+                    </div>
+                    <div class="form-group ">
+                        <div class="row justify-content-evenly mt-5">
+                            <div class="col-4">
+                                <button type="button" class="btn btn-primary">Enviar</button>
+                            </div>
+                            <div class="col-4">
+                                <button type="button" class="btn btn-danger">Cancelar</button>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+     </div>
+   </div>
+</div> -->

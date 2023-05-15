@@ -1,0 +1,20 @@
+.container {
+    margin-left: 280px;
+    width: 81%;
+    height: 100vh;
+}
+
+section {
+    margin-top: 5%;
+}
+
+div {
+    display: block;
+}
+
+@media (max-width: 768px) {
+    .container {
+        margin-left: 0;
+        width: 100%;
+    }
+}

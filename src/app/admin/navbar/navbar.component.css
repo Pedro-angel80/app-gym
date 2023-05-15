@@ -1,0 +1,72 @@
+.header {
+    position: fixed;
+    left: 0;
+    top: 0;
+    height: 100vh;
+    width: 280px;
+    color: #fff;
+    overflow-y: auto;
+    scrollbar-color: rgba(0, 0, 0, 0.2) #54B689;
+    scrollbar-width: thin;
+}
+
+.header .navbar {
+    padding: 1.5rem 1rem;
+}
+
+.header .blog-name a {
+    color: white;
+    text-decoration: none;
+}
+
+.profile-section {
+    width: 100%;
+}
+
+.profile-section .profile-image {
+    max-width: 160px;
+}
+
+.navbar-nav {
+    position: absolute;
+    top: 95%;
+    text-align: center;
+}
+
+.nav-link {
+    color: white !important;
+}
+
+@media (max-width: 768px) {
+    .header {
+        position: static;
+        width: inherit;
+        height: auto;
+    }
+
+    .blog-name {
+        margin: 0 auto;
+        position: static;
+    }
+
+    .header .blog-name a {
+        font-weight: bold;
+        font-size: 1.5rem;
+        color: #fff;
+    }
+
+
+    .navbar {
+        position: relative;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: space-between;
+        padding-top: .5rem;
+        padding-bottom: .5rem;
+    }
+
+    header {
+        display: block;
+    }
+}

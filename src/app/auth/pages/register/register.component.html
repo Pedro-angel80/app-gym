@@ -1,0 +1,44 @@
+<div class="container">
+    <div class="card mb-3 shadow">
+        <div class="card-header">
+            <h3 class="card-title">Registrar Usuario</h3>
+        </div>
+        <div class="card-body">
+            <div class="row">
+                <form class="col s12">
+                    <div class="input-field col s12">
+                        <input id="username" type="text" class="validate">
+                        <label for="username">Name</label>
+                        <span class="helper-text" data-error="wrong" data-success="right">Nombre de usuario</span>
+                    </div>
+                    <div class="input-field col s12">
+                        <input id="email" type="email" class="validate">
+                        <label for="email">Email</label>
+                        <span class="helper-text" data-error="wrong" data-success="right">example@email.com</span>
+                    </div>
+                    <div class="input-field col s12">
+                        <input id="password" type="password" class="validate">
+                        <label for="password">Password</label>
+                        <span class="helper-text" data-error="wrong" data-success="right">Ingresa tu contraseña</span>
+                    </div>
+                    <div class="input-field col s12">
+                        <input id="passwordcopy" type="password" class="validate">
+                        <label for="passwordcopy">Confirm Password</label>
+                        <span class="helper-text" data-error="wrong" data-success="right">Confirma tu contraseña</span>
+                    </div>
+                    <div class="input-field col s12">
+                        <input id="role" type="text" class="validate">
+                        <label for="role">Role</label>
+                        <span class="helper-text" data-error="wrong" data-success="right">Rol de usuario</span>
+                    </div>
+                    <div class="input-field col s12">
+                        <a style="color:black" routerLink="/auth">Or Login Account</a>
+                    </div>
+                    <div class="input-field col s12">
+                        <button class="waves-effect btn-secondary btn">crear</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
