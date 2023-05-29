@@ -21,4 +21,11 @@ export class ProductService {
     return this.httpClient.get<any>(`${this.baseUrl}/item`, {headers})
   }
 
+  createProduct(product: any) {
+    const headers = {
+      Authorization: `Token ${this.user.token}`
+    }
+    return this.httpClient.post<any>(`${this.baseUrl}/item`,product , {headers});
+  }
+
 }

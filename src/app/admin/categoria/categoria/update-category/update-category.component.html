@@ -1,0 +1,30 @@
+<div class="container">
+    <div class="row d-flex justify-content-center">
+        <div class="col-8">
+            <div class="card border-light mb-3 shadow">
+                <div class="card-header">Create Category</div>
+                <div class="card-body">
+                    <form (ngSubmit)="cateId == undefined ? create() : updateCategory()" [formGroup]="categoryForm">
+                        <div class="form-group">
+                            <label for="inputName" class="form-label mt-4">Nombre</label>
+                            <input formControlName="name" type="text" class="form-control" id="inputName" aria-describedby="naimeHelp"
+                                placeholder="Enter name">
+                            <small *ngIf="formValid" id="emailHelp" class="form-text text-muted">Ingresa nombre.</small>                            
+                            <small *ngIf="!formValid" id="emailHelp" class="form-text text-muted"><p style="color: red;">El valor es requerido.</p></small>
+                        </div>
+                        <div class="form-group ">
+                            <div class="row justify-content-evenly mt-5">
+                                <div class="col-4">
+                                    <button type="submit" class="btn btn-primary">Enviar</button>
+                                </div>
+                                <div class="col-4">
+                                    <button type="button" class="btn btn-danger">Cancelar</button>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

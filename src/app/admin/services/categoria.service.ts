@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { environment } from 'src/environments/environment';
 
@@ -17,5 +17,42 @@ export class CategoriaService {
 
   readCategory(){
     return this.httpClient.get<any>(`${this.baseUrl}/category`);
+  }
+
+  readCategoryAll(total: number) {
+    const headers = {
+      Authorization: `Token ${this.user.token}`
+    }
+    let params = new HttpParams();
+    params = params.append('limit', total)
+    return this.httpClient.get<any>(`${this.baseUrl}/category`, { headers, params })
+  }
+
+  createCategory(category: any){
+    const headers = {
+      Authorization: `Token ${this.user.token}`
+    }
+    return this.httpClient.post<any>(`${this.baseUrl}/category`,category , {headers});
+  }
+
+  readCategoryById(id: string) {
+    const headers = {
+      Authorization: `Token ${this.user.token}`
+    }
+    return this.httpClient.get<any>(`${this.baseUrl}/category/${id}`, { headers })
+  }
+
+  updateCategory(id: string, category: any){
+    const headers = {
+      Authorization: `Token ${this.user.token}`
+    }
+    return this.httpClient.put<any>(`${this.baseUrl}/category/${id}`,category , {headers});
+  }
+
+  deleteCategory(id: string) {
+    const headers = {
+      Authorization: `Token ${this.user.token}`
+    }
+    return this.httpClient.delete<any>(`${this.baseUrl}/category/${id}`, { headers })
   }
 }
