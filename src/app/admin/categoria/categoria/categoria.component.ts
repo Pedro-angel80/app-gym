@@ -44,6 +44,7 @@ export class CategoriaComponent implements OnInit {
           //Actualiza la lista de categorias
           this.readCategory();
         }, err => {
+          console.warn(err);
           Swal.fire({
             icon: 'error',
             title: 'Oops...',

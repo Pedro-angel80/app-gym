@@ -1,10 +1,10 @@
 <div class="card border-light mb-3 shadow">
     <div class="card-header">Create Product</div>
     <div class="card-body">
-        <form>
+        <form (submit)="create()" [formGroup]="productForm">
             <div class="form-group">
                 <label for="inputName" class="form-label mt-4">Nombre</label>
-                <input type="text" class="form-control" id="inputName" aria-describedby="naimeHelp"
+                <input formControlName="name" type="text" class="form-control" id="inputName" aria-describedby="naimeHelp"
                     placeholder="Enter name">
                 <small id="emailHelp" class="form-text text-muted">Ingresa tu nombre completo.</small>
             </div>
@@ -12,20 +12,20 @@
                 <fieldset class="form-group">
                     <label for="inputState" class="form-label mt-4">Estado</label>
                     <div class="form-check form-switch">
-                        <input class="form-check-input" type="checkbox" id="flexSwitchCheckPrice">
+                        <input formControlName="state" class="form-check-input" type="checkbox" id="flexSwitchCheckPrice">
                         <small id="switchPrice" class="form-text text-muted">Activar/Desactivar</small>
                     </div>
                 </fieldset>
             </div>
             <div class="form-group">
                 <label for="inputPrice" class="form-label mt-4">Precio</label>
-                <input type="text" class="form-control" id="inputPrice" aria-describedby="priceHelp"
+                <input formControlName="price" type="text" class="form-control" id="inputPrice" aria-describedby="priceHelp"
                     placeholder="Enter price">
                 <small id="emailHelp" class="form-text text-muted">Ingresa el precio.</small>
             </div>
             <div class="form-group">
                 <label for="inputDescription" class="form-label mt-4">Descripción</label>
-                <input type="text" class="form-control" id="inputDescription" placeholder="descriptionHelp"
+                <input formControlName="description" type="text" class="form-control" id="inputDescription" placeholder="descriptionHelp"
                     placeholder="Enter description">
                 <small id="emailHelp" class="form-text text-muted">Ingresa descripción del producto.</small>
             </div>
@@ -33,22 +33,30 @@
                 <fieldset class="form-group">
                     <label for="inputState" class="form-label mt-4">Disponible</label>
                     <div class="form-check form-switch">
-                        <input class="form-check-input" type="checkbox" id="flexSwitchCheckAvailable">
+                        <input formControlName="available" class="form-check-input" type="checkbox" id="flexSwitchCheckAvailable">
                         <small id="switchAvailable" class="form-text text-muted">Activar/Desactivar</small>
                     </div>
                 </fieldset>
             </div>
-            <div class="form-group">
-                <label for="inputCategory" class="form-label mt-4">Categoría</label>
+            <div *ngIf="productID !== undefined" class="form-group">
+                <label for="inputCategory" class="form-label mt-4">Categoría Actual</label>
                 <input type="text" class="form-control" id="inputCategory" aria-describedby="categoryHelp"
-                    placeholder="Enter category">
+                    placeholder="Enter category" disabled>
                 <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone
                     else.</small>
+            </div>
+            <div class="form-group">
+                <fieldset class="form-group">
+                    <label for="inputState" class="form-label mt-4">Categoria</label>
+                    <select class="form-select" id="exampleSelect1" formControlName="category">
+                        <option *ngFor="let category of categories" value="{{category.uid}}">{{category.name}}</option>
+                    </select>
+                </fieldset>
             </div>
             <div class="form-group ">
                 <div class="row justify-content-evenly mt-5">
                     <div class="col-4">
-                        <button type="button" class="btn btn-primary">Enviar</button>
+                        <button type="submit" class="btn btn-primary">Enviar</button>
                     </div>
                     <div class="col-4">
                         <button type="button" class="btn btn-danger">Cancelar</button>
